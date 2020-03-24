@@ -1,18 +1,13 @@
 import React from 'react';
-import './App.css';
+import Button from './Button.js';
 
-function App(props) {
-  let newNumber = React.createRef();
-  let onInputChange = () => {
-    let number = newNumber.current.value;
-    let action = {name: 'CHANGE_NUMBER', number: number};
-    props.dispatch(action);
-  };
-  return (
-      <div className="App">
-        <textarea ref={newNumber} onChange={onInputChange} value={props.store._state.input}></textarea>
-      </div>
-  );
+function NumButtons(props, index) {
+    let buttons = props.buttons.map(num => (<Button name={num}   action = {props.butAddNumber}/>))
+    return (
+        <div className="NumButtons" key = {index}>
+            {buttons}
+        </div>
+    );
 }
 
-export default App;
+export default NumButtons;

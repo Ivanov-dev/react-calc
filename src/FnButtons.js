@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from './Button.js';
 
-function NumButtons(props) {
-    let buttons = props.buttons.map(num => (<Button name={num} action='0' dispatch = {props.dispatch}/>))
+function FnButtons(props) {
+    let buttons = props.buttons.map(fn => (<Button name={fn}   action = {props.setFnAction}/>))
     return (
-        <div className="NumButtons">
+        <div className="FnButtons">
             {buttons}
         </div>
     );
 }
 
-export default NumButtons;
+export default FnButtons;

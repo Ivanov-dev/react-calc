@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
-import Buttons from './NumButtons.js';
 
-function NumButtons(props) {
+function Button(props) {
 
-    props
-
-  return (
-      <div className="NumButtons">
-        <Button name = '' action = 0/>
-      </div>
-  );
+    return (
+        <div>
+            <div className="Buttons" onClick={props.action}>{props.name}</div>
+        </div>
+    );
 }
 
-export default App;
+export default Button;
